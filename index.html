@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISCOVER SHIZUOKA | 三保の松原 ＆ 久能山東照宮 完全観光ガイド</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.9;
+        }
+
+        /* Top Header Banner */
+        .header-banner {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.82) 0%, rgba(30, 58, 138, 0.9) 100%), 
+                        url('images/miho.jpg') center/cover no-repeat;
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 20px 85px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 6px 20px;
+            border-radius: 50px;
+            letter-spacing: 0.15em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .header-banner h1 {
+            font-size: 2.7rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+
+        .header-sub-jp {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .header-sub-en {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 940px;
+            margin: -40px auto 70px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Quick Overview Strip */
+        .overview-strip {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 24px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .overview-item h3 {
+            font-size: 1.25rem;
+            color: #0f172a;
+            font-weight: 800;
+        }
+
+        .overview-item p {
+            font-size: 0.88rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Spot Card */
+        .spot-card {
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            margin-bottom: 60px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .main-cover {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            background-color: #cbd5e1;
+        }
+
+        .main-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .spot-floating-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(15, 23, 42, 0.88);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .spot-body {
+            padding: 42px 48px;
+        }
+
+        .spot-title-area {
+            margin-bottom: 24px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 16px;
+        }
+
+        .spot-title-en {
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .spot-heading {
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: #0f172a;
+        }
+
+        .article-text {
+            font-size: 1.06rem;
+            color: #334155;
+            margin-bottom: 20px;
+            text-align: justify;
+            white-space: pre-line;
+        }
+
+        /* 2-Column Photo Gallery on the page */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .gallery-box {
+            position: relative;
+            height: 240px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+
+        .gallery-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-tag {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #ffffff;
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Highlight Boxes */
+        .highlight-container {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin: 25px 0;
+            border-left: 5px solid #cbd5e1;
+        }
+
+        .box-blue-border { border-left-color: #0284c7; background: #f0f9ff; }
+        .box-red-border { border-left-color: #dc2626; background: #fef2f2; }
+
+        .highlight-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .box-blue-border .highlight-title { color: #0369a1; }
+        .box-red-border .highlight-title { color: #b91c1c; }
+
+        .appeal-list {
+            list-style: none;
+        }
+
+        .appeal-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #334155;
+        }
+
+        .appeal-list li:last-child { margin-bottom: 0; }
+
+        .box-blue-border .appeal-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #0284c7;
+            font-weight: bold;
+        }
+
+        .box-red-border .appeal-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        /* Travel Information Grid */
+        .travel-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .tip-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .tip-card-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tip-card-value {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .tip-card-desc {
+            font-size: 0.84rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* Map Location Component */
+        .location-container {
+            margin-top: 32px;
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .location-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .location-info h4 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            font-weight: 800;
+        }
+
+        .location-info p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1e3a8a;
+            color: #ffffff;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+        }
+
+        .map-frame-wrapper {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+        }
+
+        .map-frame-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Final Action Box */
+        .invitation-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            border-radius: 20px;
+            padding: 48px 30px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+            margin-top: 40px;
+        }
+
+        .invitation-banner h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #facc15;
+            margin-bottom: 14px;
+        }
+
+        .invitation-banner p {
+            font-size: 1.08rem;
+            color: #cbd5e1;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px 50px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 700px) {
+            .header-banner h1 { font-size: 2rem; }
+            .header-sub-jp { font-size: 1.15rem; }
+            .main-cover { height: 250px; }
+            .photo-gallery { grid-template-columns: 1fr; }
+            .spot-body { padding: 25px 20px; }
+            .overview-strip { flex-direction: column; gap: 10px; }
+            .location-header { flex-direction: column; align-items: flex-start; }
+            .map-button { width: 100%; justify-content: center; }
+            .travel-tips-grid { grid-template-columns: 1fr; }
+    <title>清水・駿河湾クルーズ日帰り旅行計画書</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .info-box {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .spot {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .spot:last-child {
+            border-bottom: none;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<<<<<<< HEAD
+    <!-- Header Banner -->
+    <header class="header-banner">
+        <span class="header-badge">SHIZUOKA TRAVEL SHOWCASE</span>
+        <h1>富士を望む海と、黄金の社殿へ</h1>
+        <div class="header-sub-jp">三保の松原 ＆ 久能山東照宮を巡る旅</div>
+        <p class="header-sub-en">Experience the Majestic View of Mt. Fuji & Japan's National Treasure Shrine</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 2 Main Spots Highlight Bar -->
+        <div class="overview-strip">
+            <div class="overview-item">
+                <h3>🌲 三保の松原 (Miho Pine Grove)</h3>
+                <p>UNESCO World Heritage / ユネスコ世界文化遺産</p>
+            </div>
+            <div style="color: #cbd5e1; font-size: 1.5rem;">|</div>
+            <div class="overview-item">
+                <h3>⛩️ 久能山東照宮 (Kunozan Toshogu)</h3>
+                <p>National Treasure / 国宝・重要文化財</p>
+            </div>
+        </div>
+
+        <!-- SPOT 1: 三保の松原について -->
+        <article class="spot-card">
+            <div class="main-cover">
+                <img src="images/miho.jpg" alt="三保の松原から望む富士山">
+                <span class="spot-floating-tag">UNESCO 世界文化遺産 構成資産</span>
+            </div>
+
+            <div class="spot-body">
+                <div class="spot-title-area">
+                    <span class="spot-title-en" style="color: #0284c7;">Spot 01 • Miho no Matsubara</span>
+                    <h2 class="spot-heading">三保の松原について</h2>
+                </div>
+
+                <p class="article-text">
+日本の静岡県静岡市に位置する「三保の松原」は、日本を代表する美しく歴史的な景勝地の一つです。その比類なき自然美から多くの人々を魅了し続けており、2013年には富士山の構成資産の一つとしてユネスコの世界文化遺産に登録されました。
+                </p>
+
+                <p class="article-text">
+ここでの最大の魅力は、青々とした松林、打ち寄せる白い波、そしてその背後に雄大にそびえ立つ富士山を一度に望むことができる圧倒的な絶景です。これら三つの要素が織りなす風景は非常に象徴的であり、古くから多くの芸術家や歌川広重らの浮世絵にも描かれてきました。
+                </p>
+
+                <!-- Photo Gallery Grid for Miho -->
+                <div class="photo-gallery">
+                    <div class="gallery-box">
+                        <img src="images/miho-road.jpg" alt="神の道">
+                        <div class="gallery-tag">天女伝説が眠る「羽衣の松」と神の道</div>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="images/miho.jpg" alt="海岸線">
+                        <div class="gallery-tag">潮風を感じる美しい海岸線</div>
+                    </div>
+                </div>
+
+                <p class="article-text">
+さらに、この地は日本の伝統的な天女の伝説である「羽衣の伝説」の舞台としても深く知られています。海岸近くには天女が衣を掛けたと伝えられる「羽衣の松」があり、近くの「御穂神社」へと続く「神の道」の厳かな雰囲気とともに、地域に深い歴史と神聖な息吹を与えています。松の葉擦れの音や潮風を感じながら海岸線を歩く時間は、何ものにも替えがたい安らぎをもたらしてくれます。
+                </p>
+
+                <p class="article-text">
+三保の松原は単なる美しい海岸線ではなく、日本の豊かな自然、歴史、そして文化が美しく調和した特別な場所です。訪れる人々に深い感動と静寂を与えてくれる、いつまでも大切にしたい名勝です。
+                </p>
+
+                <!-- Highlights Box -->
+                <div class="highlight-container box-blue-border">
+                    <div class="highlight-title">✦ 三保の松原の魅力まとめ (Key Highlights)</div>
+                    <ul class="appeal-list">
+                        <li><strong>圧倒的な絶景：</strong> 青々とした松林、白い波、そして雄大な富士山が織りなす完璧な風景。</li>
+                        <li><strong>歴史と伝説：</strong> 天女の「羽衣の伝説」が息づく羽衣の松と厳かな「神の道」。</li>
+                    </ul>
+                </div>
+
+                <!-- 料金・時間・撮影スポット -->
+                <div class="travel-tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-card-title">🎟️ 入場料 (Admission)</div>
+                        <div class="tip-card-value">無料 (Free)</div>
+                        <div class="tip-card-desc">海岸・松林・神の道は自由散策</div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-card-title">⏱️ 目安時間 (Duration)</div>
+                        <div class="tip-card-value">約 40 〜 60 分</div>
+                        <div class="tip-card-desc">海岸散策と神の道の往復</div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-card-title">📸 ベスト撮影スポット</div>
+                        <div class="tip-card-value">波打ち際の石碑前</div>
+                        <div class="tip-card-desc">松と海と富士山が1枚に収まる場所</div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="location-container">
+                    <div class="location-header">
+                        <div class="location-info">
+                            <h4>📍 三保の松原 アクセスマップ</h4>
+                            <p>〒424-0901 静岡県静岡市清水区三保</p>
+                        </div>
+                        <a href="https://maps.google.com/?q=三保の松原" target="_blank" rel="noopener noreferrer" class="map-button">
+                            🗺️ Google Maps で開く
+                        </a>
+                    </div>
+                    <div class="map-frame-wrapper">
+                        <iframe src="https://maps.google.com/maps?q=三保の松原&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- SPOT 2: 久能山東照宮について -->
+        <article class="spot-card">
+            <div class="main-cover">
+                <img src="images/kunozan.jpg" alt="久能山東照宮 楼門">
+                <span class="spot-floating-tag">日本国宝・重要文化財</span>
+            </div>
+
+            <div class="spot-body">
+                <div class="spot-title-area">
+                    <span class="spot-title-en" style="color: #dc2626;">Spot 02 • Kunozan Toshogu Shrine</span>
+                    <h2 class="spot-heading">久能山東照宮について</h2>
+                </div>
+
+                <p class="article-text">
+久能山東照宮は、1617年の江戸時代のはじめに建てられた、日本の歴史においてとても大切な場所です。
+日本をひとつにまとめたえらい武将である「徳川家康」が亡くなったあと、本人の遺言によってこの久能山にお墓がつくられました。その1年後、息子の手によってこの立派な神社が建てられました。そのため、ここには昔からの神さまではなく、歴史上の人物である徳川家康が「東照大権現」という神さまとしてまつられています。
+                </p>
+
+                <!-- Photo Gallery Grid for Toshogu -->
+                <div class="photo-gallery">
+                    <div class="gallery-box">
+                        <img src="images/toshogu-detail.jpg" alt="極彩色の彫刻">
+                        <div class="gallery-tag">日本の職人技が光る極彩色の彫刻</div>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="images/kunozan.jpg" alt="社殿">
+                        <div class="gallery-tag">徳川家康公の威厳を感じる本殿</div>
+                    </div>
+                </div>
+
+                <p class="article-text" style="font-weight: bold; margin-bottom: 10px;">
+この場所の大きなみどころは、主に3つあります。
+                </p>
+
+                <div class="highlight-container box-red-border">
+                    <div class="highlight-title">✦ 久能山東照宮の大きなみどころ（主に3つ）</div>
+                    <ul class="appeal-list">
+                        <li><strong>ひとつめは「国宝の建物」です。</strong> 建物のまわりにある細かい木の彫刻や、金ピカのきれいな飾り、あざやかな色は、日本の「国宝」にえらばれるほど非常に立派で美しいです。</li>
+                        <li><strong>ふたつめは「家康のお墓」です。</strong> 建物のさらに上にある、しずかな森の中に家康の本物のお墓がひっそりと眠っています。</li>
+                        <li><strong>みっつめは「ロープウェイ」です。</strong> 山の上へ行くために乗るロープウェイからは、青い海である駿河湾や山々の景色を一望することができ、景色を楽しむことも大きな魅力となっています。</li>
+                    </ul>
+                </div>
+
+                <p class="article-text">
+このように、久能山東照宮は歴史の深さと素晴らしい建物の美しさ、そして豊かな自然の景色を一度に楽しむことができる、とてもすばらしい観光スポットです。
+                </p>
+
+                <!-- 料金・時間・ロープウェイ情報 -->
+                <div class="travel-tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-card-title">🎟️ 拝観料 (Admission)</div>
+                        <div class="tip-card-value">大人 500円</div>
+                        <div class="tip-card-desc">（博物館セット券は大人 800円）</div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-card-title">🚠 ロープウェイ (Ropeway)</div>
+                        <div class="tip-card-value">往復 大人 1,250円</div>
+                        <div class="tip-card-desc">日本平山頂から約5分で到着</div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-card-title">⏱️ 目安時間 (Duration)</div>
+                        <div class="tip-card-value">約 60 〜 90 分</div>
+                        <div class="tip-card-desc">社殿拝観・家康のお墓・ロープウェイ</div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="location-container">
+                    <div class="location-header">
+                        <div class="location-info">
+                            <h4>📍 久能山東照宮 アクセスマップ</h4>
+                            <p>〒422-8011 静岡県静岡市駿河区根古屋390</p>
+                        </div>
+                        <a href="https://maps.google.com/?q=久能山東照宮" target="_blank" rel="noopener noreferrer" class="map-button">
+                            🗺️ Google Maps で開く
+                        </a>
+                    </div>
+                    <div class="map-frame-wrapper">
+                        <iframe src="https://maps.google.com/maps?q=久能山東照宮&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Final Invitation Banner -->
+        <section class="invitation-banner">
+            <h2>先生と一緒に静岡の名所を巡ろう！</h2>
+            <p>
+                富士山の絶景に包まれる世界遺産「三保の松原」と、徳川家康公の歴史を受け継ぐ国宝「久能山東照宮」。実際に訪れてその魅力を体験できる日を楽しみにしています！
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 静岡・三保の松原＆久能山東照宮 ガイドウェブサイト</p>
+    </footer>
+=======
+<div class="container">
+    <p style="text-align: right;">令和8年8月7日</p>
+    <h1>ご旅行計画書</h1>
+    <h2>【 清水・駿河湾クルーズ日帰り 】</h2>
+    
+    <div class="info-box">
+        <p><strong>旅行会社:</strong> 株式会社 第一観光 (<a href="https://www.daiichikanko.co.jp/" target="_blank">公式サイト</a>)</p>
+        <p style="font-size: 0.9em; color: #555;">〒440-0076 愛知県豊橋市大橋通り2-122 | 電話 0532-54-1651 FAX 0532-54-9340</p>
+        <p style="font-size: 0.9em; color: #555;">総合旅行業務取扱管理者: 広瀬 重人 | 担当: 広瀬 重人</p>
+        <p><strong>出発日:</strong> 令和8年9月12日（土）</p>
+        <p><strong>方面:</strong> 清水・久能山東照宮</p>
+        <p><strong>参加者:</strong> 中部コンピュータ・パティシエ専門学校様 (学生 20名, 先生 1名, 添乗員 1名 計22名)</p>
+        <p><strong>交通手段:</strong> 中型バス</p>
+    </div>
+
+    <h2>行程スケジュール</h2>
+    <ul>
+        <li><strong>08:45</strong> - 配車・出発準備 (学校前)</li>
+        <li><strong>09:00</strong> - 学校前 出発</li>
+        <li><strong>09:30</strong> - 豊川IC ➔ 新東名高速道路（途中1回休憩）</li>
+        <li><strong>11:00</strong> - 清水IC 到着</li>
+        <li><strong>11:20 - 12:40</strong> (昼食 11:40〜) - 清水エスパルスドリームプラザ内「はとばキッチン」</li>
+        <li><strong>13:00 - 13:40</strong> - 駿河湾クルーズ</li>
+        <li><strong>14:10 - 14:45</strong> - 三保の松原</li>
+        <li><strong>15:00 - 16:20</strong> - 久能山東照宮 (久能山下駐車場利用)</li>
+        <li><strong>16:40</strong> - 久能山IC ➔ 高速道路で帰路へ (途中休憩)</li>
+        <li><strong>18:30</strong> - 豊川IC通過</li>
+        <li><strong>19:00</strong> - 学校前 到着・解散</li>
+    </ul>
+
+    <div style="background: #fff3cd; padding: 10px; border-radius: 5px; margin-top: 15px; font-size: 0.9em;">
+        <p>◎この日程表は令和8年8月7日現在のスケジュールです。</p>
+        <p>◎お客様の安全確保の為にバス走行中は常にシートベルト着用をお願いします。</p>
+        <p>◎運輸機関などの変更により出発時間等が変更になる場合があります。予めご了承下さい。</p>
+    </div>
+
+    <h2>訪問スポット詳細</h2>
+
+    <div class="spot">
+        <h3>1. 清水エスパルスドリームプラザ</h3>
+        <p>港近くにある大型商業施設で、館内には「はとばキッチン」やちびまる子ちゃんランドがあります。</p>
+        <p>🔗 <a href="https://www.dream-plaza.co.jp/" target="_blank">公式サイト</a> | 
+            📍 <a href="https://maps.google.com/?cid=7712450589527793790" target="_blank">Googleマップ (S-Pulse Dream Plaza)</a></p>
+    </div>
+
+    <div class="spot">
+        <h3>2. 駿河湾・清水港クルーズ</h3>
+        <p>清水港や駿河湾を巡る遊覧船クルーズ。天気が良ければ富士山を望むことができます。</p>
+        <p>🔗 <a href="https://www.shimizu-cruise.co.jp/" target="_blank">公式サイト</a> | 
+            📍 <a href="https://maps.google.com/?cid=7646320499361608265" target="_blank">Googleマップ (Shimizu Harbor Bay Cruise)</a></p>
+    </div>
+
+    <div class="spot">
+        <h3>3. 三保の松原</h3>
+        <p>青々とした松林と美しい海岸線、そして富士山の絶景が楽しめる世界文化遺産の景勝地。</p>
+        <p>🔗 <a href="https://miho-no-matsubara.jp/" target="_blank">公式サイト</a> | 
+            📍 <a href="https://maps.google.com/?cid=7264174959909716498" target="_blank">Googleマップ (Miho no Matsubara)</a></p>
+    </div>
+
+    <div class="spot">
+        <h3>4. 久能山東照宮</h3>
+        <p>徳川家康公を祀る日本最初の東照宮。国宝に指定された豪華絢爛な社殿があります。</p>
+        <p>🔗 <a href="https://www.toshogu.or.jp/" target="_blank">公式サイト</a> | 
+            📍 <a href="https://maps.google.com/?cid=18432006227154893421" target="_blank">Googleマップ (Kunōzan Tōshōgū)</a></p>
+    </div>
+
+</div>
+>>>>>>> 1911b60156d2d52bc647de09a49f05b54a2dabf5
+
+</body>
+</html>
